@@ -18,6 +18,9 @@
       <Platform>x64</Platform>
     </ProjectConfiguration>
   </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="TheMenuSourceCode.c" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{C720A98E-A9A3-489B-A0CF-C8B85AAE04AC}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
