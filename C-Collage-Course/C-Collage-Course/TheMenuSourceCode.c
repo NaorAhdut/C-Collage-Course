@@ -5,21 +5,6 @@
 
 
 
-int main()
-{
-	const int numberOfusers = 3;
-	char *users[3][2] = { { "", "" }, { "", "" }, { "Naor", "123456" } };
-	int isValid = login(numberOfusers, users);
-	if (isValid == 1) 
-	{
-		menu();
-	}
-	else
-	{
-		createUser(users, numberOfusers);
-	}
-	return 0;
-}
 
 void createUser(char users[][2], int numberOfusers)
 {
@@ -115,4 +100,20 @@ int menu()
 		break;
 	}
 	return userSavedDishes;
+}
+
+int main()
+{
+	const int numberOfusers = 3;
+	char *users[3][2] = { { "", "" },{ "", "" },{ "Naor", "123456" } };
+	int isValid = login(numberOfusers, users); // the function will pass the numberOfusers, users parameters to the login function
+	if (isValid == 1)
+	{
+		menu();
+	}
+	else
+	{
+		createUser(users, numberOfusers);
+	}
+	return 0;
 }
