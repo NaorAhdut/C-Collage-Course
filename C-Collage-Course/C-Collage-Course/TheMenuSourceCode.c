@@ -21,12 +21,23 @@ int main()
 	return 0;
 }
 
-void createUser(char *users, int numberOfusers)
+void createUser(char users[][2], int numberOfusers)
 {
+	char userName, password;
+	printf("Enter Your UserName : \n");
+	scanf("%s", userName);
+	printf("Enter Your Password : \n");
+	scanf("%s", password);
 	int i;
 	for (i = 0; i < numberOfusers; i++)
 	{
-
+		if (strcmp(users[i][0], "") == 0) // if userName is empty the strcmp will return 0 and will enter the if . else continue .
+		{
+			users[i][0] = userName;
+			printf("Your Configures User is : %s ", users[i][0]);
+			users[i][1] = password;
+			printf("Your Configures password is : %s ", users[i][1]);
+		}
 	}
 
 }
@@ -47,16 +58,14 @@ int login(int numberOfusers , char users[][2])
 		int i;
 		for (i = 0; i < numberOfusers; i++)
 		{
-			if (strcmp(users[i][0] , "") == 0 ) // if userName is empty the strcmp will return 0 and will enter the if . else continue .
+			if (strcmp(userName, users[i][0]) == 0 && strcmp(password, users[i][1]) == 0)
 			{
-				users[i][0] = userName;  
-				printf("Your Configures User is : %s ", users[i][0]);
-				users[i][1] = password;
-				printf("Your Configures password is : %s ", users[i][1]);
+				printf("\nWelcome\n");
+				return 1;
 			}
 		}
 		
-		return 1;
+		return 0;
 	}
 	else
 	{
