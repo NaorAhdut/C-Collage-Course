@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <math.h>
 #include <string.h> 
+#include <stdlib.h>
 
 
 
@@ -27,7 +28,7 @@ int main()
 		}
 		userSavedDishes[userChoose - 1] += 1;
 
-		printf("Your Orders Sire:");
+		printf("Your Orders Sire:\n");
 		for (i = 0; i < NUM_OF_DISHES; i++)
 		{
 			if (userSavedDishes != 0)
@@ -35,8 +36,8 @@ int main()
 				printf("%d - %s, ", userSavedDishes[i], theMenu[i]);
 			}
 		}
-		char anotherDishYesNo[] = "No";
-		printf("\nWould You Like Another Dish ? (Yes / No )");
+		char anotherDishYesNo[] = "Yes";
+		printf("\nWould You Like Another Dish ? (Yes / No )\n");
 		scanf("%s", anotherDishYesNo);
 		if (strcmp(anotherDishYesNo, "Yes") == 0)
 		{
